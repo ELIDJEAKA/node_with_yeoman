@@ -37,7 +37,7 @@ stages:
       pool:
         vmImage: 'Ubuntu-16.04'
       environment:
-        name: <environment name>
+        name: VM_NODEJS
         resourceType: VirtualMachine
       strategy:
         runOnce:
