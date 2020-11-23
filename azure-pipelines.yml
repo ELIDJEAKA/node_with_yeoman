@@ -32,3 +32,16 @@ stages:
           replaceExistingArchive: true
       - upload: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
         artifact: drop
+    jobs:
+    - deployment: VMDeploy
+      displayName: web
+      pool:
+        vmImage: 'Ubuntu-16.04'
+      environment:
+        name: VM_NODEJS
+        resourceType: VirtualMachine
+      strategy:
+        runOnce:
+          deploy:
+            steps:
+            - script: echo my first deployment
